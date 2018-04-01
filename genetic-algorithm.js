@@ -65,7 +65,7 @@ $.getJSON("dados-gasolina.json", function(Database)
 //      };
 //     });
 
-function geneticAlgorithm(X,Y)
+function geneticAlgorithm(Px, Py)
 {
   for (i = 0; i < N; i++) 
   {
@@ -73,7 +73,7 @@ function geneticAlgorithm(X,Y)
 
     for(i = 0; i < X; i++)
     {
-      Aptidao = FuncaoAptidao(Populacao, DatabaseMatriz, X, Y, Ecologico);
+      Aptidao = FuncaoAptidao(Populacao, DatabaseMatriz, Px, Py, Ecologico);
       NovaGeracao = Selecao(Populacao, Aptidao, DatabaseMatriz);
      
       for(j = 0; j < N; j++)
