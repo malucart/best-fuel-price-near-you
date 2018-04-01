@@ -1,13 +1,4 @@
-// const Database = require('./dados-gasolina.json');
-
-// var math = require('mathjs');
-var coordenadas = { Px: null, Py: null };
-var Populacao = [];
-var DatabaseMatriz = [];
-
-var X = 50;  //Numero de geracoes
-var N = 100;  //Tamanho da populacao
-var M = 1;  //Fator de mutacao
+acao
 var E = 1;  //Indice de elitismo
 var Ecologico = false;  //Bool dado pelo usuário. Se false, ele busca gasolina; caso contrário, álcool.
 var NovaGeracao;
@@ -65,7 +56,7 @@ $.getJSON("dados-gasolina.json", function(Database)
 //      };
 //     });
 
-function geneticAlgorithm(Px, Py)
+function geneticAlgorithm(X,Y)
 {
   for (i = 0; i < N; i++) 
   {
@@ -73,7 +64,7 @@ function geneticAlgorithm(Px, Py)
 
     for(i = 0; i < X; i++)
     {
-      Aptidao = FuncaoAptidao(Populacao, DatabaseMatriz, Px, Py, Ecologico);
+      Aptidao = FuncaoAptidao(Populacao, DatabaseMatriz, X, Y, Ecologico);
       NovaGeracao = Selecao(Populacao, Aptidao, DatabaseMatriz);
      
       for(j = 0; j < N; j++)
